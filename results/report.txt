@@ -1,0 +1,54 @@
+============================================================
+NETWORK ANOMALY DETECTION REPORT
+============================================================
+
+Model Comparison:
+----------------------------------------
+
+Autoencoder:
+  Accuracy:  0.9402
+  Precision: 0.0032
+  Recall:    0.0153
+  F1-Score:  0.0052
+  AUC-ROC:   0.5902
+  FPR:       0.0502
+
+Isolation Forest:
+  Accuracy:  0.9412
+  Precision: 0.0027
+  Recall:    0.0127
+  F1-Score:  0.0044
+  AUC-ROC:   0.6116
+  FPR:       0.0491
+
+Ensemble:
+  Accuracy:  0.9397
+  Precision: 0.0026
+  Recall:    0.0127
+  F1-Score:  0.0043
+  AUC-ROC:   0.6115
+  FPR:       0.0506
+
+============================================================
+Confusion Matrices:
+============================================================
+
+Autoencoder:
+  True Negatives:  35917
+  False Positives: 1897
+  False Negatives: 387
+  True Positives:  6
+
+Isolation Forest:
+  True Negatives:  35956
+  False Positives: 1858
+  False Negatives: 388
+  True Positives:  5
+
+Ensemble:
+  True Negatives:  35900
+  False Positives: 1914
+  False Negatives: 388
+  True Positives:  5
+
+============================================================

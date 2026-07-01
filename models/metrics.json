@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-04-21T08:56:57.545965",
+  "model_version": "1.0.0",
+  "config_hash": "da3c3025",
+  "random_seed": 42,
+  "dataset": {
+    "train_samples": 133722,
+    "val_samples": 19104,
+    "test_samples": 38207,
+    "n_features": 77,
+    "normal_class": "BENIGN"
+  },
+  "configuration": {
+    "autoencoder": {
+      "encoding_dims": [
+        64,
+        32,
+        16
+      ],
+      "latent_dim": 8,
+      "activation": "relu",
+      "output_activation": "sigmoid",
+      "learning_rate": 0.001,
+      "batch_size": 256,
+      "epochs": 50,
+      "early_stopping_patience": 5
+    },
+    "isolation_forest": {
+      "n_estimators": 100,
+      "contamination": 0.1,
+      "max_samples": "auto",
+      "max_features": 1.0,
+      "random_state": 42
+    },
+    "ensemble": {
+      "autoencoder_weight": 0.5,
+      "isolation_forest_weight": 0.5,
+      "threshold_method": "percentile",
+      "anomaly_percentile": 95
+    }
+  },
+  "models": {
+    "autoencoder": {
+      "accuracy": 0.940325071322009,
+      "precision": 0.00315955766192733,
+      "recall": 0.015267175572519083,
+      "f1_score": 0.005235602094240838,
+      "auc_roc": 0.5888672840989059,
+      "false_positive_rate": 0.05006082403342677,
+      "confusion_matrix": {
+        "true_negative": 35921,
+        "false_positive": 1893,
+        "false_negative": 387,
+        "true_positive": 6
+      }
+    },
+    "isolation_forest": {
+      "accuracy": 0.9421048498966158,
+      "precision": 0.002733734281027884,
+      "recall": 0.01272264631043257,
+      "f1_score": 0.004500450045004501,
+      "auc_roc": 0.5756062451660068,
+      "false_positive_rate": 0.048236103030623576,
+      "confusion_matrix": {
+        "true_negative": 35990,
+        "false_positive": 1824,
+        "false_negative": 388,
+        "true_positive": 5
+      }
+    },
+    "ensemble": {
+      "accuracy": 0.9396183945350328,
+      "precision": 0.002598752598752599,
+      "recall": 0.01272264631043257,
+      "f1_score": 0.0043159257660768235,
+      "auc_roc": 0.5755668801261189,
+      "false_positive_rate": 0.050748400063468556,
+      "confusion_matrix": {
+        "true_negative": 35895,
+        "false_positive": 1919,
+        "false_negative": 388,
+        "true_positive": 5
+      }
+    }
+  }
+}
